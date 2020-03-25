@@ -62,9 +62,17 @@ Expected OUTPUT for this sample:
  */
 
 function getMoviesFreshness(movies) {
+  return movies.map(newAr => {
+    if (newAr.rating < 60){
+      newAr.label = 'rotten'
+    } else if (newAr.rating >= 60 && newAr.rating <= 75){
+      newAr.label = 'fresh'
+    } else {
+      newAr.label = 'certified fresh'
+    }
+    return newAr
+  })
 }
-
-
 
 // DON'T TOUCH THIS!
 module.exports = getMoviesFreshness;
