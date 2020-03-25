@@ -43,9 +43,15 @@ Expected OUTPUT for this sample
 */
 
 function getFoodCategories(foods) {
+  return foods.map(newAr => {
+      if (newAr.isVegetarian === true) {
+        return newAr.food + ' is suitable for vegetarians'
+      } 
+      else {
+        return newAr.food + ' is not suitable for vegetarians'
+      }
+  })
 }
-
-
 
 // DON'T TOUCH THIS!
 module.exports = getFoodCategories;
